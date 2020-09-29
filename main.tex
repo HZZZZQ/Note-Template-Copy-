@@ -1,0 +1,162 @@
+
+% This is where the packages are declared
+
+\documentclass[]{article}
+% 首行缩进
+\usepackage{indentfirst} 
+\setlength{\parindent}{2em}
+
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+% Highlight setting
+\usepackage[colorinlistoftodos,textwidth=3.7cm]{todonotes}
+\usepackage{geometry}
+\setlength{\marginparwidth}{3.8cm}
+% \geometry{a4paper,scale=0.7}
+\geometry{a4paper,left=1cm,right=5cm,top=2cm,bottom=3cm}
+\usepackage{color,soul}
+% Define Colors
+\definecolor{lorange}{rgb}{1.0, 0.80, 0.6}
+\definecolor{pink}{rgb}{0.99, 0.75, 0.75}
+\definecolor{electricblue}{rgb}{0.6, 0.76, 1.0}
+\definecolor{brightlavender}{rgb}{0.96, 0.73, 1.0}
+% Define highlight
+\newcommand{\hlo}[1]{\sethlcolor{lorange}\hl{#1}}
+\newcommand{\hlr}[1]{\sethlcolor{pink}\hl{#1}}
+\newcommand{\hll}[1]{\sethlcolor{brightlavender}\hl{#1}}
+% Define marginnote comments
+\newcommand{\cmt}[2]{\todo[color=lorange]{#2}\sethlcolor{lorange}\hl{#1}}
+\newcommand{\cmtr}[2]{\todo[color=pink]{#2}\sethlcolor{pink}\hl{#1}}
+\newcommand{\cmtl}[2]{\todo[color=brightlavender]{#2}\sethlcolor{brightlavender}\hl{#1}}
+\newcommand{\cmtb}[2]{\todo[color=electricblue]{#2}\sethlcolor{electricblue}\hl{#1}}
+\newcommand{\sq}[1]{\todo[color=green!40,size=\tiny,tickmarkheight=0.05cm]{#1}\sethlcolor{green}\hl{ }}
+
+% \reversemarginpar
+% Bulld box for text 
+\usepackage[most]{tcolorbox} 
+\tcbuselibrary{skins, breakable, theorems}
+\newcommand{\boxx}[2]{\begin{tcolorbox}[breakable,title = \textbf{#1}] #2 \end{tcolorbox}}
+\newcommand{\boxo}[1]{\begin{tcolorbox}[colback=lorange, breakable] #1 \end{tcolorbox}}
+\newcommand{\boxb}[1]{\begin{tcolorbox}[colback=electricblue] #1 \end{tcolorbox}}
+\newcommand{\boxr}[1]{\begin{tcolorbox}[colback=pink] #1 \end{tcolorbox}}
+% \newcommand{\testeq}[1]{\begin{equation} #1 \end{equation}}
+\usepackage{framed}
+
+
+% ------------------ Start -----------------------------
+\begin{document}
+
+
+% The Title, Author Name, Date, and abstract go here
+
+\title{Note: Quantum Nonlinear Hall Effect Induced by Berry Curvature Dipole in Time-Reversal Invariant Materials}
+\author{Qtheta}
+\date{\today}
+
+\maketitle
+
+\tableofcontents
+\newpage
+
+\begin{abstract}
+
+
+\end{abstract}
+\section{Questions}
+\begin{enumerate}
+    \item what is linear Hall effect? how to distinguish linear and nonlinear ? 
+    
+    Linear may means the functional relation of Hall conductivity with electric field is linear ? 
+    \item the form of nonlinear Hall coefficient depends on point group symmetry?
+    
+    \item What's difference of Quantum Nonlinear Hall Effect, Nonlinear Hall effect, and Nonlinear anomalous Hall effect.
+    
+    A: Looks like Nonlinear Hall effect is the same thing with the Quantum nonlinear hall effect, since there is no quantized, so maybe it should not be called quantum....
+\end{enumerate}
+
+\section{Abstract part}
+
+A non-vanishing \hlo{Hall conductivity} requires \cmt{broken time-reversal symmetry}{like a magnetic field}.
+This nonlinear Hall effect has a \cmtr{quantum origin}{what is this ?} arising from the dipole moment of the Berry curvature in momentum space.
+The nonlinear \cmtr{Hall coefficient}{what's this?} is a rank-two pseudo-tensor, whose form is determined by \cmtr{point group symmetry}{How?}.
+
+%============================== Introduction ==============================
+\section{Introduction Part}
+
+The \hlo{Hall conductivity}{} of an electron system whose Hamiltonian is invariant under time-reversal symmetry is forced to vanish.
+
+\begin{tcolorbox}[breakable,title = \textbf{Hall conductivity:}]
+
+The \textbf{conductivity} is a tensor, it is defined by the resistivity tensor. 
+
+The \hlo{Resistivity} is calculated by 
+\begin{equation}
+    \left[ \begin{array} { l } { E _ { x } } \\ { E _ { y } } \\ { E _ { z } } \end{array} \right] = \left[ \begin{array} { l l l } { \rho _ { x x } } & { \rho _ { x y } } & { \rho _ { x z } } \\ { \rho _ { y x } } & { \rho _ { y y } } & { \rho _ { y z } } \\ { \rho _ { z x } } & { \rho _ { z y } } & { \rho _ { z z } } \end{array} \right] \left[ \begin{array} { c } { J _ { x } } \\ { J _ { y } } \\ { J _ { z } } \end{array} \right]
+\end{equation}
+Where $E _ { i } = \rho _ { i j } J _ { j }$, namely, $\rho _ { x x } = \frac { E _ { x } } { J _ { x } } , \quad \rho _ { y x } = \frac { E _ { y } } { J _ { x } } , \text { and } \rho _ { z x } = \frac { E _ { z } } { J _ { x } }$
+
+Now the conductivity is defined by 
+\begin{equation}
+    \left[ \begin{array} { c } { J _ { x } } \\ { J _ { y } } \\ { J _ { z } } \end{array} \right] = \left[ \begin{array} { l l l } { \sigma _ { x x } } & { \sigma _ { x y } } & { \sigma _ { x z } } \\ { \sigma _ { y x } } & { \sigma _ { y y } } & { \sigma _ { y z } } \\ { \sigma _ { z x } } & { \sigma _ { z y } } & { \sigma _ { z z } } \end{array} \right] \left[ \begin{array} { l } { E _ { x } } \\ { E _ { y } } \\ { E _ { z } } \end{array} \right]
+\end{equation}
+Namely, $J _ { i } = \sigma _ { i j } E _ { j }$
+
+Then, the relationship between $\rho$ and $\sigma$ is the \hlo{matrix inverse} of each other. Not just the reciprocals! 
+
+For example, the Hall conductivity. 
+
+
+\boxo{How to understand the anti-diagonal term?
+
+\textbf{A}: When you add a electric field, the material can be induced currents besides the collinear terms. Just like the Hall effect, one add a $E_x$ electric field, here will be a $J_y$ or $J_z$ current now.
+
+\textbf{Confused part:} I may be confused by how the transverse current comes from. We know it comes the extra magnetic field, but it doesn't matter for the conductivity. The definition of conductivity is only about the relation between density of currents and electric field, so it is no matter why they have this kind of relation. 
+}
+
+\boxb{So in Prof.Liu's paper, \hlr{what induces the anti-diagonal terms}. Here is no global magnetic field, but we have local magnetic field and break the \hlo{\textit{time reversal and inversion symmetry}}. }
+\end{tcolorbox}
+
+Crystals with sufficiently low symmetry can have resistivity tensors which are anisotropic, but \cmtr{Onsager's reciprocity relations}{} force the conductivity to be a \cmtr{symmetric tensor}{what symmetry ?} in the presence of time-reversal symmetry. 
+\textbf{Hence}, when the electric field is along \cmt{its}{the tensor I guess} principal axes, the current and the electric field are collinear, at least to \cmtr{the first order}{what is the second order? besides, what's the 1st ?} in electric fields.
+\textbf{However}, this constraint is only about the \cmtr{linear response}{only affects the linear part, so what's it? and why? } and does not necessarily enforce the full current to flow \hlo{collinearly} with the local electric field.
+
+In this Letter we study a special type of such nonlinear Hall-like currents. 
+We will demonstrate that \hll{metals without inversion symmetry} can have a \hll{nonlinear Hall-like current} arising from the \hll{Berry curvature} in momentum space.\sq{Key point}
+The conventional Hall conductivity can be viewed as the \hlo{zero order moment} of the Berry curvature over occupied states, namely, as an integral of the Berry curvature within the metal’s Fermi surface.
+\boxr{zero order =? within the metal’s Fermi surface }
+The effect we discuss here is determined by a pseudo-tensorial quantity that measures a \hll{first-order} moment of the Berry curvature over the occupied states, and hence we call it the \cmtr{Berry curvature dipole}{}. 
+This nonlinear Hall effect has a \cmtr{quantum origin}{} arising from the anomalous velocity of Bloch electrons generated by the Berry curvature [2], \hlo{but it is not expected to be quantized}.
+
+
+In a time-reversal invariant system, the Berry curvature's integral weighed by the \hlo{equilibrium} Fermi distribution is forced to vanish, because Kramers pair states at k and -k are equally occupied. 
+\textbf{However}, the second-order response is determined by the integral of the Berry curvature evaluated in the non-equilibrium distribution of electrons computed to first order in the electric field
+\boxx{The second-order response}{
+the second-order response is determined by the integral of the Berry curvature evaluated in the \hlr{non-equilibrium distribution} of electrons computed to \hlr{first order} in the electric field.
+
+\boxo{non-equilibrium current-carrying distribution is not symmetric under k $\rightarrow$ -k(\hlr{why it is un-symmetric here}), the integral of the Berry curvature weighed by it can be finite, leading to a net anomalous velocity and hence a transverse current.}
+}
+
+
+Our study builds upon a seminal work by \cmtb{Moore and Orenstein}{Experiment}
+\sq{Main result and phenomenon }We predict that an oscillating electric field can generate a transverse current at both zero and twice the frequency in two- and three-dimensional materials with a large class of crystal point group symmetries.
+In particular, the second harmonic generation is a distinctive signature that may facilitate the experimental detection of the quantum nonlinear Hall effect. Additionally, the effect does remain finite in the dc limit of the applied electric field.
+
+
+
+
+\subsection{Key point of this part} 
+\begin{enumerate}
+    \item We will demonstrate that \hll{metals without inversion symmetry} can have a \hll{nonlinear Hall-like current} arising from the \hll{Berry curvature} in momentum space.
+    
+    \item We predict that an \cmt{oscillating electric field}{that is the reason that they call it nonlinear} can generate a transverse current at both zero and twice the frequency in two- and three- dimensional materials with a large class of crystal point group symmetries.
+so I test 
+\end{enumerate}
+
+
+\section{Theory Part}
+
+
+
+\end{document}
